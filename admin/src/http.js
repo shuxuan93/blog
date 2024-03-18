@@ -17,6 +17,7 @@ http.interceptors.request.use(function (config) {
   return Promise.reject(error);
 });
 http.interceptors.response.use(res => {
+  console.log(res);
   return res
 }, err => {
   if (err.response.data.message) {

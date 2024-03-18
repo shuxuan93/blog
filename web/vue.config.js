@@ -7,7 +7,8 @@ module.exports = {
   devServer: {
     proxy: {
       '/ajax': {
-        target: 'http://test.yukikazesama.cn/',
+        // target: 'http://test.yukikazesama.cn/',
+        // target: 'http://test.yukikazesama.cn/',
         changeOrigin: true
       }
     }

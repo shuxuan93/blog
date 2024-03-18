@@ -39,6 +39,11 @@ module.exports = app => {
 
     const multer = require('multer')
     const upload = multer({dest: __dirname + '/../../uploads'})
+    // const qiniu = require("qiniu");
+    // qiniu.conf.ACCESS_KEY = "jpmNWJTGb__UOTU0dLpl9PNF9d-vpCviMgOJdA_i"; //可在个人中心查看
+    // qiniu.conf.SECRET_KEY = "sJb8hDB2I-Mr8sD1nlQs5YuRi3bStzt0STvVw1M9"; //可在个人中心查看
+    // //要上传的空间
+    // bucket = "Sxxxx";
     app.post('/admin/api/upload',upload.single('file'), async(req, res) => {
         const file = req.file
         file.url = `http://localhost:3000/uploads/${file.filename}`

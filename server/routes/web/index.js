@@ -58,6 +58,7 @@ module.exports = app => {
     //随机文章列表 默认5篇
     router.get('/some/articles', async (req, res) => {
         await Article.aggregate([{ $sample: { size: 5 } }]).exec((err, doc) => {
+            console.log('查询结果:',doc);
             res.send(doc)
         })
     })
